@@ -1,40 +1,35 @@
 #5 - Реализуйте RLE алгоритм: реализуйте модуль сжатия и восстановления данных. 
 # Входные и выходные данные хранятся в отдельных текстовых файлах.
 
-with open('enode.txt', 'r') as data:
-    my_text = data.read()
 
-def encode_rle(ss):
-    str_code = ''
+with open('enode.txt', 'r') as file:
+    my_txt = file.readline()
+    txt_compr = my_txt.split()
+
+print(my_txt)
+
+def file_encod(txt):
+    encond = ''
     prev_char = ''
     count = 1
-    for char in ss:
+    if not txt:
+        return ''
+
+    for char in txt:
         if char != prev_char:
             if prev_char:
-                str_code += str(count) + prev_char
+                encond += str(count) + prev_char
             count = 1
             prev_char = char
         else:
             count += 1
-    return str_code
+    else:
+        encond += str(count) + prev_char
+        return encond
 
-            
-str_code = encode_rle(my_text)
-print(str_code)
 
-with open('szhato.txt', 'r') as data:
-    my_text2 = data.read()
+txt_compr = file_encod(my_txt)
 
-def decoding_rle(ss:str):
-    count = ''
-    str_decode = ''
-    for char in ss:
-        if char.isdigit():
-            count += char 
-        else:
-            str_decode += char * int(count)
-            count = ''
-    return str_decode
-
-str_decode = decoding_rle(my_text2)
-print(str_decode)
+with open('szhato.txt', 'w', encoding='UTF-8') as file:
+    file.write(f'{txt_compr}')
+print(txt_compr)
