@@ -2,8 +2,8 @@
 # количество символов влево или вправо. 
 # При расшифровке происходит обратная операция. 
 
-alfavit_EU =  'ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ'
-alfavit_RU = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'
+alfavit_EU =  'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+alfavit_RU = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'
 smeshenie = int(input('Шаг шифровки: '))
 message = input("Сообщение: ").upper()
 itog = ''
